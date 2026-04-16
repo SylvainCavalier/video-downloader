@@ -5,11 +5,9 @@ module Api
     def index
       render json: {
         ok: true,
-        message: 'Test endpoint works',
+        message: "Test endpoint works",
         time: Time.current
       }
     end
   end
 end
-
-
