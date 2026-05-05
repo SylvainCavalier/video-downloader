@@ -11,6 +11,11 @@ export default [
     component: () => import('../pages/Folders.vue'),
   },
   {
+    path: '/folders/:id',
+    name: 'FolderShow',
+    component: () => import('../pages/FolderShow.vue'),
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('../pages/NotFound.vue'),

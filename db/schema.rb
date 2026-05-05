@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_04_16_202946) do
+ActiveRecord::Schema[8.0].define(version: 2026_04_20_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -30,6 +30,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_04_16_202946) do
     t.datetime "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "thumbnail_url"
+    t.text "description"
+    t.integer "duration"
     t.index ["folder_id"], name: "index_downloads_on_folder_id"
     t.index ["user_id", "status"], name: "index_downloads_on_user_id_and_status"
     t.index ["user_id"], name: "index_downloads_on_user_id"

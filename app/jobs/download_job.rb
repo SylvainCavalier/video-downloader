@@ -22,7 +22,10 @@ class DownloadJob < ApplicationJob
     download.assign_attributes(
       title: result.title,
       filename: result.filename,
-      file_size: result.file_size
+      file_size: result.file_size,
+      thumbnail_url: result.thumbnail_url,
+      description: result.description,
+      duration: result.duration
     )
 
     if download.cloud?

@@ -37,8 +37,17 @@
               class="flex-1 px-2 py-1 border border-gray-300 rounded"
               autofocus
             />
-            <span v-else class="flex-1 font-medium text-gray-900">{{ f.name }}</span>
+            <router-link
+              v-else
+              :to="{ name: 'FolderShow', params: { id: f.id } }"
+              class="flex-1 font-medium text-gray-900 hover:text-blue-600"
+            >{{ f.name }}</router-link>
             <span class="text-xs text-gray-500">{{ f.downloads_count }} download{{ f.downloads_count === 1 ? '' : 's' }}</span>
+            <router-link
+              v-if="editing !== f.id"
+              :to="{ name: 'FolderShow', params: { id: f.id } }"
+              class="text-sm text-gray-500 hover:text-blue-600"
+            >Open</router-link>
             <button v-if="editing !== f.id" @click="startEdit(f)" class="text-sm text-gray-500 hover:text-blue-600">Rename</button>
             <button v-else @click="save(f)" class="text-sm text-blue-600 font-medium">Save</button>
             <button @click="remove(f)" class="text-sm text-gray-400 hover:text-red-600">Delete</button>

@@ -5,6 +5,7 @@ module Api
     def index
       scope = policy_scope(Download).recent
       scope = scope.where(status: params[:status]) if params[:status].present?
+      scope = scope.where(folder_id: params[:folder_id]) if params[:folder_id].present?
       render json: scope.map { |d| serialize(d) }
     end
 
@@ -64,6 +65,9 @@ module Api
         title: download.title,
         filename: download.filename,
         file_size: download.file_size,
+        thumbnail_url: download.thumbnail_url,
+        description: download.description,
+        duration: download.duration,
         folder_id: download.folder_id,
         error_message: download.error_message,
         completed_at: download.completed_at,
