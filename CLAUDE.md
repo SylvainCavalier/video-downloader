@@ -78,3 +78,7 @@ GoodJob (PostgreSQL-backed, no Redis). The `downloads` table is the source of tr
 **Frontend:** Vue 3.5, Vite 5, Pinia, Vue Router, Axios, Tailwind 3.4
 **External binaries:** `yt-dlp`, `ffmpeg`
 **Runtime:** Ruby 3.3.5, Node 20.x
+
+## Life Dashboard
+
+Projet du life-dashboard : `video-downloader` (`/historyupdate` envoie chaque session au journal de bord de ce projet).
